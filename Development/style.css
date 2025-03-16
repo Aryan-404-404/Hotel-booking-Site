@@ -118,6 +118,7 @@ body {
 .btn-primary {
     background: #000;
     color: white;
+    margin-left: 20px;
 }
 
 .btn-primary:hover {
@@ -156,9 +157,8 @@ body {
 /* booking  */
 
 /* Booking Container */
-/* Booking Container */
 .booking-container {
-    margin: 20px auto;
+    margin: 100px auto;
     max-width: 50%;
     background: #C4E0E9 ;
     padding: 25px;
@@ -275,6 +275,52 @@ label {
     cursor: pointer;
 }
 
+
+/* Images section */
+.img-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 100%;
+    height: 600px;
+    margin-bottom: 50px;
+}
+.card {
+    position: relative;
+    width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+.card img {
+    width: auto;
+    height: 100%;
+    display: block;
+    transition: transform 0.4s ease-in-out;
+}
+.card .label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(45deg, #000000b3, #5c5c5cb3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+    transition: background 0.3s ease;
+}
+.middleImages .card{
+    height: 290px;
+    margin-bottom: 20px;
+}
+
+.card :hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
 
 
 
