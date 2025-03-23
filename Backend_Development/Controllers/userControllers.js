@@ -17,7 +17,7 @@ const registerUser = asyncHandler(async(req, res)=>{
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log("hashed password : ", hashedPassword);
-    const user = User.create({
+    const user = await User.create({
         userName,
         email,
         password: hashedPassword,
@@ -38,14 +38,13 @@ const loginUser = asyncHandler(async(req, res)=>{
     }
     const user = await User.findOne({email});
     if(!user){
-        res.status(400).json("email not found");
+        return res.status(400).json("email not found");
     }
     if(await bcrypt.compare(password, user.password)){
         const accessToken = jwt.sign({
             user:{
-                userName: user.name,
+                userName: user.userName,
                 email: user.email,
-                password: user.password,
             },
         },
         process.env.SECRET_KEY,
@@ -54,13 +53,16 @@ const loginUser = asyncHandler(async(req, res)=>{
         res.status(200).json({accessToken});
     }
     else{
-        req.status(400);
+        res.status(400);
         throw new Error("Email or Password is incorrect!");
     }
 });
 
 const userInfo = asyncHandler(async(req, res)=>{
-    res.json(req.user);
+    if(!req.user){
+        res.status(400).json("User is not authorized!")
+    }
+    res.status(200).json(req.user);
 });
 
 module.exports = {registerUser, loginUser, userInfo};
