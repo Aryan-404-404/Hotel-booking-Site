@@ -69,8 +69,8 @@ async function loginUser(){
     try{
         const response = await fetch('http://localhost:5001/user/login' , {
             method: "POST" , 
-            headers: {"Content-Type": " application/json"} , 
-            body: json.stringify(credentials) 
+            headers: {"Content-Type": "application/json"} , 
+            body: JSON.stringify(credentials) 
         });
 
         const data = response.json();
@@ -80,9 +80,7 @@ async function loginUser(){
         }
 
         showmessage("login successfully redirecting..." , false);
-        setTimeout( ()=> {
-            window.location.href = "Development/index.html";
-        } , 2000);
+        window.location.replace("/Development/index.html");
     }
     catch(error){ 
         showmessage(error.message, true);
