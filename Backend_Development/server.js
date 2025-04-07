@@ -9,6 +9,7 @@ connectDb();
 app.use(express.json());
 app.use('/user', require("./Routes/userRoutes"));
 app.use('/book', require("./Routes/bookingRoutes"));
+app.use('/rooms', require("./Routes/roomRoutes"));
 
 app.get('/', (req, res) => {
   res.send('Hotel booking system')
