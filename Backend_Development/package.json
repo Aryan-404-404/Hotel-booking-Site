@@ -16,7 +16,11 @@
     "express": "^4.21.2",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
+<<<<<<< HEAD
+    "mongoose": "^8.13.2"
+=======
     "mongodb": "^6.15.0",
     "mongoose": "^8.13.0"
+>>>>>>> 08926b038e56444c83ab338d9bb7a598c63c269f
   }
 }
