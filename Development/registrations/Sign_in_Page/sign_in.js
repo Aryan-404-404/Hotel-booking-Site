@@ -73,7 +73,7 @@ async function loginUser(){
             body: JSON.stringify(credentials) 
         });
 
-        const data = response.json();
+        const data = await response.json();
         
         if(!response.ok){
             throw new Error(data.message , " login failed");

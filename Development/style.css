@@ -102,8 +102,6 @@ body {
     line-height: 1.2;
 }
 
-
-
 /* Buttons */
 .btn {
     padding: 0.5rem 1rem;
@@ -137,7 +135,10 @@ body {
     background: #f3f4f6;
     transform: translateY(-1px);
 }
-
+.btn-link{
+    color: white;
+    text-decoration: none;
+}
 /* Media Queries */
 @media (min-width: 768px) {
     .nav-links {
