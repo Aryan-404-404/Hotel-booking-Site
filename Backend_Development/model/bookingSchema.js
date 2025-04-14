@@ -1,24 +1,31 @@
 const mongoose = require("mongoose");
 
 const bookingSchema = mongoose.Schema({
-    userID:{
-        type: mongoose.Schema.Types.ObjectId
-    },
-    checkIn:{
+    checkIn: {
         type: Date,
-        required: [true]
+        required: [true, "Check-in date is required"]
     },
-    checkOut:{
+    checkOut: {
         type: Date,
-        required: [true]
+        required: [true, "Check-out date is required"]
     },
-    persons:{
+    persons: {
         type: Number,
-        required: [true]
+        required: [true, "Number of persons is required"]
     },
     status:{
-        type: "String",
+        type: String,
         enum: ["Confirmed", "Pending", "Canceled"], default: "pending",
+    },
+    user:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        default: null
+    },
+    room:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'rooms',
+        default: null
     }
 }, { timestamps: true });
 

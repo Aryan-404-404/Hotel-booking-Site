@@ -15,7 +15,7 @@ createRoom = asyncHandler(async(req, res) => {
 // GET ALL ROOMS
 getAllRooms =  asyncHandler(async (req, res) => {
     try {
-        const rooms = await Room.find().populate('user', '-password -__v');;
+        const rooms = await Room.find();
         res.status(200).json(rooms);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -25,7 +25,7 @@ getAllRooms =  asyncHandler(async (req, res) => {
 // GET SINGLE ROOM
 getRoom =  asyncHandler(async (req, res) => {
     try {
-        const room = await Room.findById(req.params.id).populate('user', '-password -__v');;
+        const room = await Room.findById(req.params.id);
         if (!room) return res.status(404).json({ message: "Room not found" });
         res.status(200).json(room);
     } catch (err) {
