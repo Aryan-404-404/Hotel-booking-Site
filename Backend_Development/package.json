@@ -9,11 +9,18 @@
   "author": "Rishabh and Aryan",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
+<<<<<<< HEAD
     "mongoose": "^8.13.2"
+=======
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.13.0"
+>>>>>>> 08926b038e56444c83ab338d9bb7a598c63c269f
   }
 }
