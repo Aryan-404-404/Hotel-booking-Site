@@ -4,14 +4,14 @@ const User = require("../model/userSchema");
 const bcrypt = require("bcrypt");
 const { sign } = require("jsonwebtoken");
 
-const registerUser = asyncHandler(async(req, res)=>{
-    const {userName, email, password, role} = req.body;
-    if(!userName || !email || !password){
+const registerUser = asyncHandler(async (req, res) => {
+    const { userName, email, password, role } = req.body;
+    if (!userName || !email || !password) {
         res.status(400);
         throw new Error("All fields are mandatory!");
     }
-    const userAvailable = await User.findOne({email});
-    if(userAvailable){
+    const userAvailable = await User.findOne({ email });
+    if (userAvailable) {
         res.status(400);
         throw new Error("User is already Registered!");
     }
@@ -24,16 +24,16 @@ const registerUser = asyncHandler(async(req, res)=>{
         role: role || "user"
     })
     console.log("User created:", user);
-    if(user){
-        res.status(201).json({userName: user.userName, email: user.email, role: user.role});
+    if (user) {
+        res.status(201).json({ userName: user.userName, email: user.email, role: user.role });
     }
-    else{
+    else {
         res.status(400).json("The data is incorrect");
     }
 });
 
 const loginUser = asyncHandler(async (req, res) => {
-    const { email, password } = req.body;
+    const {email, password } = req.body;
     if (!email || !password) {
         res.status(400);
         throw new Error("All fields are mandatory!");
@@ -57,15 +57,21 @@ const loginUser = asyncHandler(async (req, res) => {
             process.env.SECRET_KEY,
             { expiresIn: "1h" }
         );
-        res.status(200).json({ accessToken });
+        res.status(200).json({accessToken, user: {
+                _id: user._id,
+                userName: user.userName,
+                email: user.email,
+                role: user.role
+            }
+        });
     } else {
         res.status(400);
         throw new Error("Email or Password is incorrect!");
     }
 });
 
-const userInfo = asyncHandler(async(req, res)=>{
-    if(!req.user){
+const userInfo = asyncHandler(async (req, res) => {
+    if (!req.user) {
         res.status(400).json("User is not authorized!")
     }
     res.status(200).json({
@@ -73,7 +79,7 @@ const userInfo = asyncHandler(async(req, res)=>{
         userName: req.user.userName,
         email: req.user.email,
         role: req.user.role
-      });
+    });
 });
 
-module.exports = {registerUser, loginUser, userInfo};
+module.exports = { registerUser, loginUser, userInfo };
