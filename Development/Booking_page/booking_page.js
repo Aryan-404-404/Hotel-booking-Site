@@ -66,6 +66,8 @@ const modalRoomDetails = document.getElementById('modal-room-details');
 const bookingForm = document.getElementById('booking-form');
 const confirmation = document.getElementById('confirmation');
 const bookingReference = document.getElementById('booking-reference');
+const loadingAnimation = document.getElementById('loading-animation');
+const submitButton = bookingForm.querySelector('button[type="submit"]');
 
 
 // Set minimum dates for check-in and check-out
@@ -226,6 +228,9 @@ window.addEventListener('click', function (event) {
 bookingForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    loadingAnimation.style.display = 'block';
+    submitButton.disabled = true;
+
     const roomId = bookingForm.getAttribute('data-room-id');
     const checkIn = bookingForm.getAttribute('data-check-in');
     const checkOut = bookingForm.getAttribute('data-check-out');
@@ -264,6 +269,9 @@ bookingForm.addEventListener('submit', async (e) => {
         }
     } catch (err) {
         alert('Server error');
+    }finally {
+        loadingAnimation.style.display = 'none';
+        submitButton.disabled = false;
     }
 });
 

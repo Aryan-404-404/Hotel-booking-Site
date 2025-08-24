@@ -15,6 +15,59 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.nav {
+    background: white;
+    padding: 0.2rem 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-family: serif;
+    color: #000;
+}
+
+.nav-links {
+    display: none; /* Initially hidden for mobile */
+}
+
+.nav-link {
+    color: #374151;
+    text-decoration: none;
+    margin: 0 2rem;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+.menu-button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-button svg {
+    width: 24px;
+    height: 24px;
+    color: #374151;
+}
+
 body {
   background-color: #f9fafb;
 }
