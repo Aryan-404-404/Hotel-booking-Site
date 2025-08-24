@@ -3,6 +3,10 @@ const registerTab = document.getElementById('register-tab');
 const loginForm = document.getElementById('login-form');
 const registerForm = document.getElementById('register-form');
 const messageBox = document.getElementById('message-box');
+const loginLoadingAnimation = document.getElementById('login-loading-animation');
+const registerLoadingAnimation = document.getElementById('register-loading-animation');
+const loginButton = document.querySelector('#login-form button[type="submit"]');
+const registerButton = document.querySelector('#register-form button[type="submit"]');
 
 import config from "../../config.js";
 
@@ -35,6 +39,9 @@ document.getElementById("login-form").addEventListener('submit', async (Event) =
 
 // register user
 async function registerUser() {
+    registerLoadingAnimation.style.display = 'block';
+    registerButton.disabled = true;
+
     const userData = {
         userName: document.getElementById('register-username').value,
         email: document.getElementById('register-email').value,
@@ -58,11 +65,17 @@ async function registerUser() {
     }
     catch (error) {
         showmessage(error.message, true);
+    }finally {
+        registerLoadingAnimation.style.display = 'none';
+        registerButton.disabled = false;
     }
 }
 
 // login User
 async function loginUser() {
+    loginLoadingAnimation.style.display = 'block';
+    loginButton.disabled = true;
+
     const credentials = {
         email: document.getElementById('login-email').value,
         password: document.getElementById('login-password').value
@@ -88,6 +101,10 @@ async function loginUser() {
     }
     catch (error) {
         showmessage(error.message, true);
+    }
+    finally {
+        loginLoadingAnimation.style.display = 'none';
+        loginButton.disabled = false;
     }
 }
 

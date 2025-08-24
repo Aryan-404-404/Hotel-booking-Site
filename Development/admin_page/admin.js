@@ -4,6 +4,13 @@ const itemsPerPage = 10;
 import config from '../config.js';
 const token = localStorage.getItem('token');
 
+document.getElementById('signOut').addEventListener('click', () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    
+    window.location.href = '../registrations/Sign_in_Page/sign_in.html';
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   loadBookings();
   document.getElementById("refreshBtn").addEventListener("click", loadBookings);

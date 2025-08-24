@@ -5,7 +5,7 @@ const roomData = [
         type: "deluxe",
         price: 199,
         priceUnit: "per night",
-        image: "https://source.unsplash.com/600x400/?hotel,room,luxury",
+        image: "../resources/img1.avif",
         description: "Spacious room with a king-sized bed and city view.",
         features: ["King Bed", "City View", "Free WiFi", "Mini Bar", "Room Service"]
     },
@@ -15,7 +15,7 @@ const roomData = [
         type: "standard",
         price: 149,
         priceUnit: "per night",
-        image: "https://source.unsplash.com/600x400/?hotel,twin,room",
+        image: "../resources/img4.avif",
         description: "Comfortable room with two twin beds.",
         features: ["Twin Beds", "Free WiFi", "TV", "Air Conditioning"]
     },
@@ -25,7 +25,7 @@ const roomData = [
         type: "standard",
         price: 299,
         priceUnit: "per night",
-        image: "https://source.unsplash.com/600x400/?hotel,suite,executive",
+        image: "../resources/img5.avif",
         description: "Luxurious suite with separate living area and premium amenities.",
         features: ["King Bed", "Separate Living Area", "Ocean View", "Free WiFi", "Mini Bar", "Room Service", "Bathtub"]
     },
@@ -35,7 +35,7 @@ const roomData = [
         type: "standard",
         price: 349,
         priceUnit: "per night",
-        image: "https://source.unsplash.com/600x400/?hotel,family,suite",
+        image: "../resources/img6.avif",
         description: "Spacious suite perfect for families, with two bedrooms.",
         features: ["Two Bedrooms", "King Bed", "Twin Beds", "Family Area", "Free WiFi", "Mini Bar", "Room Service"]
     },
@@ -45,7 +45,7 @@ const roomData = [
         type: "standard",
         price: 199,
         priceUnit: "per night",
-        image: "https://source.unsplash.com/600x400/?hotel,single,room",
+        image: "../resources/img2.webp",
         description: "Cozy room for solo travelers.",
         features: ["Single Bed", "Free WiFi", "TV", "Air Conditioning"]
     }

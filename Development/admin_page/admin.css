@@ -105,6 +105,20 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#signOut {
+    margin-top: auto;  /* Push to bottom */
+    color: #ff4444;
+}
+
+#signOut:hover {
+    background-color: rgba(255, 0, 0, 0.1);
 }
 
 .nav-item:hover, .nav-item.active {

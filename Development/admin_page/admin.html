@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="admin.css">
 </head>
+
 <body>
-  <nav class="nav">
-        <div class="nav-container">
-            <h1 class="logo">Aghor Sakti Peeth</h1>
-            <div class="nav-links">
-                <a href="../registrations/Sign_in_Page/sign_in.html" class="nav-link">Sign in</a>
-            </div>
-            <button class="menu-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="4" x2="20" y1="12" y2="12" />
-                    <line x1="4" x2="20" y1="6" y2="6" />
-                    <line x1="4" x2="20" y1="18" y2="18" />
-                </svg>
-            </button>
-        </div>
-    </nav>
   <div class="wrapper">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -47,9 +33,13 @@
           <i class="fas fa-cog"></i>
           <span>Settings</span>
         </div>
+        <div class="nav-item" id="signOut">
+          <i class="fa-solid fa-sign-out-alt"></i>
+          <span>Sign out</span>
+        </div>
       </div>
     </div>
-    
+
     <!-- Main Content -->
     <div class="content">
       <div class="header">
@@ -58,7 +48,7 @@
           <i class="fas fa-sync-alt"></i> Refresh
         </button>
       </div>
-      
+
       <!-- Stats Cards -->
       <div class="stats">
         <div class="stat-card">
@@ -98,11 +88,11 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Bookings Table -->
       <div class="card">
         <div id="loading" class="loading">Loading bookings...</div>
-        
+
         <div class="table-container">
           <table id="bookingsTable">
             <thead>
@@ -121,7 +111,7 @@
             </tbody>
           </table>
         </div>
-        
+
         <!-- Pagination -->
         <div class="pagination">
           <div class="page-info">
@@ -134,12 +124,12 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Toast notification -->
   <div class="toast" id="toast">Status updated successfully!</div>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="module" src="admin.js"></script>
-  <script src="../signOut.js"></script>
 </body>
+
 </html>
