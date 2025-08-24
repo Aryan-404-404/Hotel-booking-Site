@@ -15,7 +15,7 @@ if(button){
             localStorage.removeItem('user');
             button.textContent = 'Sign In'
             button.onclick=()=>{
-                window.location.href = "./registrations/Sign_in_Page/sign_in.html";
+                window.location.href = "./index.html";
             }
             window.location.reload();
         }
