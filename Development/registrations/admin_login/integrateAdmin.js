@@ -19,7 +19,7 @@ document.getElementById('admin-login-form').addEventListener('submit', async (e)
             messageBox.innerText = "Admin Login Successful";
             localStorage.setItem('token', data.accessToken);
             localStorage.setItem('user', JSON.stringify(data.user));
-            window.location.href = '/Development/admin_page/admin.html';
+            window.location.href = '../../admin_page/admin.html';
         }
         else {
             messageBox.innerText = data.message || "Login Failed as admin!";

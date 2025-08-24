@@ -84,7 +84,7 @@ async function loginUser() {
         localStorage.setItem('token', data.accessToken);
         console.log("Received token:", data.accessToken);
         localStorage.setItem('user', JSON.stringify(data.user));
-        window.location.replace("/Development/index.html");
+        window.location.replace("/index.html");
     }
     catch (error) {
         showmessage(error.message, true);
