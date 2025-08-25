@@ -270,7 +270,42 @@ label {
 @media (max-width: 768px) {
     .booking-container {
         max-width: 90%;
-        padding: 20px;
+        margin: 80px auto;
+        padding: 15px;
+    }
+
+    .booking-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .booking-title {
+        font-size: 20px;
+    }
+
+    .booking-subtitle {
+        font-size: 14px;
+    }
+
+    .date-input,
+    .select-wrapper select {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .book-now-btn {
+        height: 45px;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    label {
+        font-size: 12px;
     }
     .nav-links {
         display: flex;
@@ -302,6 +337,12 @@ label {
     .btn-primary {
         margin: 0.5rem 0;
         width: 100%;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .booking-container {
+        max-width: 70%;
+        margin: 90px auto;
     }
 }
 
