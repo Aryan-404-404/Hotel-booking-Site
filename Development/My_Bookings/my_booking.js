@@ -4,6 +4,27 @@ if (!token) {
     alert("Please sign in first");
     window.location.href = "../registrations/Sign_in_Page/sign_in.html";
 }
+const menuButton = document.querySelector('.menu-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            menuButton.setAttribute('aria-expanded',
+                navLinks.classList.contains('active'));
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') &&
+                !e.target.closest('.nav-container')) {
+                navLinks.classList.remove('active');
+                menuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        navLinks.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {

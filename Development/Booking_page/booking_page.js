@@ -68,7 +68,28 @@ const confirmation = document.getElementById('confirmation');
 const bookingReference = document.getElementById('booking-reference');
 const loadingAnimation = document.getElementById('loading-animation');
 const submitButton = bookingForm.querySelector('button[type="submit"]');
+const menuButton = document.querySelector('.menu-button');
+const navLinks = document.querySelector('.nav-links');
 
+// menu hamburger
+menuButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle('active');
+    menuButton.setAttribute('aria-expanded',
+        navLinks.classList.contains('active'));
+});
+
+document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') &&
+        !e.target.closest('.nav-container')) {
+        navLinks.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', 'false');
+    }
+});
+
+navLinks.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
 
 // Set minimum dates for check-in and check-out
 const today = new Date();
@@ -244,7 +265,7 @@ bookingForm.addEventListener('submit', async (e) => {
     };
 
     try {
-        const res = await fetch(config.apiUrl+`/book/bookings`, {
+        const res = await fetch(config.apiUrl + `/book/bookings`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -269,7 +290,7 @@ bookingForm.addEventListener('submit', async (e) => {
         }
     } catch (err) {
         alert('Server error');
-    }finally {
+    } finally {
         loadingAnimation.style.display = 'none';
         submitButton.disabled = false;
     }
