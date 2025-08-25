@@ -272,6 +272,37 @@ label {
         max-width: 90%;
         padding: 20px;
     }
+    .nav-links {
+        display: flex;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        z-index: 999;  /* Add z-index */
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-primary {
+        margin: 0.5rem 0;
+        width: 100%;
+    }
 }
 
 .dateIcon {
