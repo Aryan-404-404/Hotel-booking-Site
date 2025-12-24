@@ -28,6 +28,7 @@ HeavenStay is a full-stack hotel booking application where users can explore roo
 ---
 ## 🛠️ Project Structure
 │
+```
 HOTEL_BOOKING/
 ├── Backend_Development/
 │   ├── config/
@@ -55,6 +56,7 @@ HOTEL_BOOKING/
 │   └── style.css
 │
 └── README.md
+```
 
 <div align="center">
   <p><strong>⭐ Star this repo if you found it helpful!</strong></p>
